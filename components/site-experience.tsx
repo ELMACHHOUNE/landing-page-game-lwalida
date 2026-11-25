@@ -198,7 +198,7 @@ export default function SiteExperience() {
       </section>
 
       <section className="story-scroll section-paper">
-        <div className="story-title"><div><h2>Four fragments from a city that has kept these stories close.</h2></div><p></p></div>
+        <div className="story-title"><div><h2>L’Walida — Four fragments</h2></div></div>
         <div className="chapter-list">{chapters.map((chapter) => <article className="chapter-row" key={chapter.number}><div className="chapter-meta"><span>{chapter.number}</span><span className="chapter-rule" /><span>{chapter.place}</span></div><div className="chapter-image"><img src={chapter.image} alt={`${chapter.place}, a place in the L’Walida story`} /><span className="image-index">L’W · {chapter.number}</span></div><div className="chapter-copy"><h3>{chapter.title}</h3><p>{chapter.text}</p><span className="chapter-coord">RABAT, MOROCCO</span></div></article>)}</div>
       </section>
 
