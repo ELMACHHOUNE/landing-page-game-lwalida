@@ -16,6 +16,17 @@ import {
   X,
 } from "lucide-react";
 
+const colorPalette = [
+  { name: "Oudaya Blue", hex: "#276B8C" },
+  { name: "Midnight Blue", hex: "#183744" },
+  { name: "Chalk White", hex: "#F2EDE3" },
+  { name: "Hassan Sand", hex: "#C8A477" },
+  { name: "Memory Sepia", hex: "#A87C52" },
+  { name: "Olive Green", hex: "#66765A" },
+  { name: "Terracotta", hex: "#AB6048" },
+  { name: "Charcoal", hex: "#252827" },
+];
+
 const memories = [
   {
     title: "The Photograph",
@@ -39,7 +50,7 @@ const memories = [
     sketch: "〰",
   },
   {
-    title: "Zohra’s Childhood",
+    title: "Zohra's Childhood",
     place: "A place called home",
     text: "Small moments, kept alive by the people who were there to witness them.",
     mark: "04",
@@ -52,6 +63,13 @@ const memories = [
     mark: "05",
     sketch: "↗",
   },
+];
+
+const gameFeatures = [
+  { id: "explore", title: "Explore", description: "Walk through historic streets and discover the places that hold a story." },
+  { id: "photograph", title: "Photograph", description: "Look through the lens to recognize familiar places and preserve them." },
+  { id: "listen", title: "Listen", description: "Gather voices, footsteps, and the everyday sound of the medina." },
+  { id: "remember", title: "Remember", description: "Bring each collected fragment into a journal that slowly comes alive." },
 ];
 
 const team = [
@@ -140,6 +158,12 @@ function Logo({ className = "" }: { className?: string }) {
     />
   );
 }
+
+const parallaxLayers = [
+  { name: "foreground", speed: 10 },
+  { name: "midground", speed: 6 },
+  { name: "background", speed: 2 },
+];
 
 export default function SiteExperience() {
   const [memory, setMemory] = useState(0);
@@ -333,6 +357,20 @@ export default function SiteExperience() {
           </div>
           <span className="hero-side-note">LOST IN THE MEDINA — RABAT</span>
         </div>
+
+        <div className="hero-parallax-bg">
+          {parallaxLayers.map((layer, i) => (
+            <div
+              key={layer.name}
+              className={`hero-parallax-layer ${layer.name}`}
+              style={{
+                speed: layer.speed,
+                backgroundImage: `url('/images/rabat-dusk.png')`,
+                transform: `translateZ(${layer.speed}px)`,
+              }}
+            />
+          ))}
+        </div>
       </section>
 
       <section id="story" className="intro section-paper">
@@ -395,6 +433,313 @@ export default function SiteExperience() {
             <br />
             of what it keeps.
           </div>
+        </div>
+      </section>
+
+      <section id="world" className="world-section">
+        <div className="world-header">
+          <div>
+            <span className="eyebrow">CHAPTER 03 — PLACES THAT REMEMBER</span>
+            <h2>
+              A city that
+              <br />
+              <em>remembers.</em>
+            </h2>
+          </div>
+          <p>
+            Inspired by the real streets, courtyards, and landmarks of Rabat.
+          </p>
+        </div>
+        <div className="location-strip">
+          <article className="location-card location-large">
+            <img
+              src="/images/rabat-dusk.png"
+              alt="Blue and white architecture inspired by the Kasbah des Oudayas"
+            />
+            <span className="location-no">01 / KASBAH DES OUDAYAS</span>
+            <h3>
+              Blue walls.
+              <br />
+              Open skies.
+            </h3>
+            <span className="location-arrow">
+              <ArrowUpRight />
+            </span>
+          </article>
+          <article className="location-card location-small">
+            <img
+              src="/images/rabat-dusk.png"
+              alt="A sunlit market street inspired by Rabat’s old medina"
+            />
+            <span className="location-no">02 / THE OLD MEDINA</span>
+            <h3>
+              Every turn,
+              <br />a story.
+            </h3>
+            <span className="location-arrow">
+              <ArrowUpRight />
+            </span>
+          </article>
+          <article className="location-card location-small">
+            <div className="location-art">
+              <span>✳</span>
+              <strong> Hassan </strong>
+              <i>RABAT · MOROCCO</i>
+            </div>
+            <span className="location-no">03 / HASSAN TOWER</span>
+            <h3>
+              A landmark
+              <br />
+              in the distance.
+            </h3>
+            <span className="location-arrow">
+              <ArrowUpRight />
+            </span>
+          </article>
+          <article className="location-card location-wide">
+            <img
+              src="/images/rabat-dusk.png"
+              alt="Illustrated Rabat skyline at golden hour"
+            />
+            <span className="location-no">04 / THE BOUREGREG</span>
+            <h3>
+              Where the city
+              <br />
+              meets the light.
+            </h3>
+            <span className="location-arrow">
+              <ArrowUpRight />
+            </span>
+          </article>
+        </div>
+      </section>
+
+      <section className="mechanics-section section-paper">
+        <div className="mechanics-intro">
+          <span className="eyebrow ink-eyebrow">THE WAY YOU REMEMBER</span>
+          <h2>
+            Collect what
+            <br />
+            <em>time cannot erase.</em>
+          </h2>
+          <p>
+            A quiet journey of looking closer, listening longer, and keeping the
+            things that matter.
+          </p>
+        </div>
+        <div className="mechanics-grid">
+          {gameFeatures.map((feature) => (
+            <article
+              key={feature.id}
+              className="mechanic-card"
+              style={{
+                transition: "transform .35s cubic-bezier(.2,.7,.2,1)",
+              }}
+            >
+              <div className="mechanic-icon">
+                {feature.id === "explore" && <Compass />}{feature.id === "photograph" && <Camera />}{feature.id === "listen" && <Mic2 />}{feature.id === "remember" && <BookOpen />}
+              </div>
+              <span className="mechanic-no">{feature.id}</span>
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+              <span className="mechanic-illustration">{feature.id === "explore" && "✳"}{feature.id === "photograph" && "◉"}{feature.id === "listen" && "〰"}{feature.id === "remember" && "▱"}</span>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="art-section">
+        <div className="art-intro">
+          <span className="eyebrow">A WORLD MADE BY HAND</span>
+          <h2>
+            Designed from heritage.
+            <br />
+            <em>Built from memories.</em>
+          </h2>
+          <p>
+            An open book, a living archive. The visual language of L’Walida
+            draws from Rabat’s old walls, treasured photographs, and the warmth
+            of well-kept pages.
+          </p>
+          <Logo className="art-logo" />
+        </div>
+        <div className="brand-board">
+          <div className="brand-logo-card">
+            <span className="board-label">THE MARK — AN OPEN BOOK</span>
+            <Logo />
+          </div>
+          <div className="palette-card">
+            <span className="board-label">FOUR COLORS, ONE MEMORY</span>
+            <div className="swatches">
+              {colorPalette.map((color, i) => (
+                <div
+                  key={i}
+                  style={{ background: color.hex }}
+                >
+                  <span>{color.name}</span>
+                  <b>{color.hex}</b>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="texture-card">
+            <span>ARCHITECTURE / PATTERN / PLACE</span>
+            <div className="zellige-mark">✳</div>
+            <strong>
+              Made to feel
+              <br />
+              like it was kept.
+            </strong>
+          </div>
+        </div>
+      </section>
+
+      <section className="sound-section">
+        <div className="sound-ornament">♫</div>
+        <span className="eyebrow">CHAPTER 04 — CLOSE YOUR EYES</span>
+        <h2>
+          The medina
+          <br />
+          <em>has a voice.</em>
+        </h2>
+        <p>
+          Footsteps on old stone. A cup set down in a café. The hush between two
+          stories. Original sound and music are part of the world L’Walida is
+          building.
+        </p>
+        <div className="audio-placeholder">
+          <div className="audio-play">
+            <AudioLines size={22} />
+          </div>
+          <div className="audio-info">
+            <span>ORIGINAL SOUND & MUSIC</span>
+            <strong>Listen for the memories</strong>
+            <small>Audio coming soon</small>
+          </div>
+          <div className="waveform" aria-hidden="true">
+            {Array.from({ length: 32 }, (_, index) => (
+              <i
+                key={index}
+                style={{ height: `${10 + ((index * 13) % 27)}px` }}
+              />
+            ))}
+          </div>
+          <span className="audio-unavailable">NOT YET AVAILABLE</span>
+        </div>
+        <span className="sound-credit">
+          SOUND DESIGN & ORIGINAL MUSIC · PROJET_29
+        </span>
+      </section>
+
+      <section className="trailer-section">
+        <div className="trailer-art">
+          <img
+            src="/images/rabat-dusk.png"
+            alt="Rabat rooftops at sunset, the world of L’Walida"
+          />
+          <div className="trailer-overlay" />
+        </div>
+        <div className="trailer-content">
+          <span className="eyebrow">A GLIMPSE INTO THE WORLD</span>
+          <h2>
+            Step inside
+            <br />
+            <em>the memories.</em>
+          </h2>
+          <span className="trailer-coming">
+            <span /> TRAILER COMING SOON
+          </span>
+        </div>
+        <span className="trailer-mark">L’W · 2.5D NARRATIVE ADVENTURE</span>
+      </section>
+
+      <section id="team" className="team-section section-paper">
+        <div className="team-heading">
+          <div>
+            <span className="eyebrow ink-eyebrow">
+              THE PEOPLE BEHIND THE PAGES
+            </span>
+            <h2>
+              Eight creatives.
+              <br />
+              <em>One story.</em>
+            </h2>
+          </div>
+          <p>
+            A shared passion for Moroccan culture, art, and interactive
+            storytelling.
+            <br />
+            <span>MEET PROJET_29</span>
+          </p>
+        </div>
+        <div className="team-grid">
+          {team.map(([name, role, work], index) => (
+            <article className="team-member" key={name}>
+              <div className="portrait-placeholder">
+                <span className="portrait-initials">
+                  {name
+                    .split(" ")
+                    .filter(Boolean)
+                    .slice(0, 2)
+                    .map((part) => part.charAt(0))
+                    .join("")
+                    .replace(/[^A-Za-z]/g, "")
+                    .slice(0, 2)}
+                </span>
+                <span className="portrait-number">0{index + 1}</span>
+                <span className="portrait-note">PROJET_29</span>
+              </div>
+              <div className="member-meta">
+                <span>{role}</span>
+                <h3>{name}</h3>
+                <p>{work}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="process-section">
+        <div className="process-heading">
+          <span className="eyebrow">THE MAKING OF A MEMORY</span>
+          <h2>
+            From an idea
+            <br />
+            <em>to a living world.</em>
+          </h2>
+          <p>A collaborative journey across story, image, sound, and play.</p>
+        </div>
+        <ol className="timeline">
+          {steps.map((step, index) => (
+            <li key={step}>
+              <span className="timeline-number">0{index + 1}</span>
+              <span className="timeline-dot" />
+              <div>
+                <h3>{step}</h3>
+                <span>PROJET_29 · GAME JAM VGC</span>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section className="jam-section">
+        <span className="jam-star">✳</span>
+        <span className="eyebrow">MADE FOR GAME JAM VGC</span>
+        <h2>
+          Lost in the Medina.
+          <br />
+          <em>Found in a memory.</em>
+        </h2>
+        <p>
+          L’Walida brings storytelling, graphic design, game development, music,
+          and sound together to celebrate Moroccan cultural heritage through an
+          emotional interactive experience.
+        </p>
+        <div className="jam-signature">
+          <span>AN ORIGINAL PROJECT BY</span>
+          <strong>PROJET_29</strong>
+          <span>RABAT, MOROCCO · 2026</span>
         </div>
       </section>
 
