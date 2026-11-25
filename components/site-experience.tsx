@@ -191,12 +191,12 @@ export default function SiteExperience() {
       </section>
 
       <section className="story-scroll section-paper">
-        <div className="story-title"><div><h2>Follow the<br /><em>familiar.</em></h2></div><p>Four fragments from a city that has kept these stories close.</p></div>
+        <div className="story-title"><div><h2>Four fragments from a city that has kept these stories close.</h2></div><p></p></div>
         <div className="chapter-list">{chapters.map((chapter) => <article className="chapter-row" key={chapter.number}><div className="chapter-meta"><span>{chapter.number}</span><span className="chapter-rule" /><span>{chapter.place}</span></div><div className="chapter-image"><img src={chapter.image} alt={`${chapter.place}, a place in the L’Walida story`} /><span className="image-index">L’W · {chapter.number}</span></div><div className="chapter-copy"><h3>{chapter.title}</h3><p>{chapter.text}</p><span className="chapter-coord">RABAT, MOROCCO</span></div></article>)}</div>
       </section>
 
       <section id="world" className="world-section">
-        <div className="world-header"><div><h2>A city that<br /><em>remembers.</em></h2></div><p>Inspired by the real streets, courtyards, and landmarks of Rabat.</p></div>
+        <div className="world-header"><div><h2>Inspired by the real streets, courtyards, and landmarks of Rabat.</h2></div><p></p></div>
         <div className="location-strip"><article className="location-card location-large"><img src="/images/rabat-dusk.png" alt="Blue and white architecture inspired by the Kasbah des Oudayas" /><span className="location-no">01 / KASBAH DES OUDAYAS</span><h3>Blue walls.<br />Open skies.</h3><span className="location-arrow"><ArrowUpRight /></span></article><article className="location-card location-small"><img src="/images/rabat-dusk.png" alt="A sunlit market street inspired by Rabat’s old medina" /><span className="location-no">02 / THE OLD MEDINA</span><h3>Every turn,<br />a story.</h3><span className="location-arrow"><ArrowUpRight /></span></article><article className="location-card location-small"><div className="location-art"><span>✳</span><strong>حسن</strong><i>RABAT · MOROCCO</i></div><span className="location-no">03 / HASSAN TOWER</span><h3>A landmark<br />in the distance.</h3><span className="location-arrow"><ArrowUpRight /></span></article><article className="location-card location-wide"><img src="/images/rabat-dusk.png" alt="Illustrated Rabat skyline at golden hour" /><span className="location-no">04 / THE BOUREGREG</span><h3>Where the city<br />meets the light.</h3><span className="location-arrow"><ArrowUpRight /></span></article></div>
       </section>
 
