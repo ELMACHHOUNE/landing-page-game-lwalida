@@ -65,6 +65,8 @@ export default function SiteExperience() {
     setMemory((current) => (current + direction + memories.length) % memories.length)
   }
 
+  const isFirstMount = useRef(true)
+
   useEffect(() => {
     const hero = heroRef.current
     const stage = hero?.querySelector<HTMLElement>('.hero-stage')
@@ -75,6 +77,11 @@ export default function SiteExperience() {
     const updateOpening = () => {
       window.cancelAnimationFrame(frame)
       frame = window.requestAnimationFrame(() => {
+        if (isFirstMount.current) {
+          isFirstMount.current = false
+          hero.style.setProperty('--opening-reveal', '0')
+          hero.style.setProperty('--opening-nav-visibility', 'hidden')
+        }
         const travelDistance = Math.max(hero.offsetHeight - stage.offsetHeight, 1)
         const progress = motionPreference.matches
           ? 1
