@@ -16,7 +16,7 @@ The official landing page for **L’Walida**, an emotional narrative adventure i
 
 This repository is the **marketing and information site** for L’Walida. It presents the game’s story, world, art direction, sound design, team, and production journey, and gives visitors a place to follow the project until release.
 
-The game follows a young man who returns to his mother’s childhood neighbourhood with an old photograph, exploring the streets, voices, and memories that shaped her world. The landing page reflects that tone through an editorial, book-inspired visual language: warm paper textures, deep teal, gold accents, and Moroccan architectural motifs.
+The game follows a young man who returns to his mother’s childhood neighbourhood with an old photograph, exploring the streets, voices, and memories that shaped her world. The landing page reflects that tone through an editorial, book-inspired visual language: warm paper textures, deep noir, gold accents, and Moroccan architectural motifs.
 
 ## Tech stack
 
@@ -120,14 +120,18 @@ When deploying, set `NEXT_PUBLIC_SITE_URL` to the production origin so canonical
 
 ## Brand assets
 
-The favicon set is generated from the L’Walida open-book mark in the brand palette:
+The site uses a **noir, gold, and beige** palette that pairs Rabat’s warmth with an archival, gallery-like feel:
 
-| Token | Hex |
-|---|---|
-| Midnight Teal | `#0A272E` |
-| Gold | `#E3A43E` |
-| Leather / Terracotta | `#BD6B31` |
-| Paper | `#FCE9D3` |
+| Token | Hex | Role |
+|---|---|---|
+| Noir | `#0A0A0A` | Page background |
+| Charcoal | `#1C1915` | Raised surfaces, muted text on dark |
+| Antique Gold | `#C8A24C` | Primary accent, links, focus rings |
+| Champagne | `#E0C078` | Highlight gold |
+| Bronze | `#8A6A2F` | Deep accent, emphasis on paper |
+| Beige | `#EDE4D3` | Paper sections, primary text on dark |
+| Sand | `#CDB996` | Warm neutral, borders, image frames |
+| Taupe | `#8A7C63` | Muted captions and metadata |
 
 To regenerate icons, edit `public/icon.svg` and export PNGs at 16, 32, 180, 192, and 512 px, plus `favicon.ico`.
 

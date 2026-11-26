@@ -5,14 +5,14 @@ import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, AudioLines, BookOpen, C
 import { team } from '@/lib/site'
 
 const colorPalette = [
-  { name: "Oudaya Blue", hex: "#276B8C" },
-  { name: "Midnight Blue", hex: "#183744" },
-  { name: "Chalk White", hex: "#F2EDE3" },
-  { name: "Hassan Sand", hex: "#C8A477" },
-  { name: "Memory Sepia", hex: "#A87C52" },
-  { name: "Olive Green", hex: "#66765A" },
-  { name: "Terracotta", hex: "#AB6048" },
-  { name: "Charcoal", hex: "#252827" },
+  { name: "Noir", hex: "#0A0A0A" },
+  { name: "Charcoal", hex: "#1C1915" },
+  { name: "Antique Gold", hex: "#C8A24C" },
+  { name: "Champagne", hex: "#E0C078" },
+  { name: "Bronze", hex: "#8A6A2F" },
+  { name: "Beige", hex: "#EDE4D3" },
+  { name: "Sand", hex: "#CDB996" },
+  { name: "Taupe", hex: "#8A7C63" },
 ];
 
 const gameFeatures = [
@@ -31,6 +31,14 @@ const memories = [
 ]
 
 const steps = ['Research & exploration', 'Narrative & game concept', 'Visual identity', 'Character & environment design', 'UI/UX design', 'Sound & music production', 'Unity implementation', 'Testing & final presentation']
+
+function isLightColor(hex: string) {
+  const value = hex.replace('#', '')
+  const r = parseInt(value.slice(0, 2), 16)
+  const g = parseInt(value.slice(2, 4), 16)
+  const b = parseInt(value.slice(4, 6), 16)
+  return 0.299 * r + 0.587 * g + 0.114 * b > 150
+}
 
 function Logo({ className = '' }: { className?: string }) {
   return <img className={className} src="/logo.png" width={1040} height={640} alt="L’Walida — الوالدة open-book logo" decoding="async" />
@@ -187,7 +195,7 @@ export default function SiteExperience() {
 
       
 
-      <section className="art-section"><div className="art-intro"><span className="eyebrow">A WORLD MADE BY HAND</span><h2>Designed from heritage.<br /><em>Built from memories.</em></h2><p>An open book, a living archive. The visual language of L’Walida draws from Rabat’s old walls, treasured photographs, and the warmth of well-kept pages.</p><Logo className="art-logo" /></div><div className="brand-board"><div className="brand-logo-card"><span className="board-label">THE MARK — AN OPEN BOOK</span><Logo /></div><div className="palette-card"><span className="board-label">FOUR COLORS, ONE MEMORY</span><div className="swatches">{colorPalette.map((color, i) => (<div key={i} style={{ background: color.hex }}><span>{color.name}</span><b>{color.hex}</b></div>))}</div></div><div className="texture-card"><span>ARCHITECTURE / PATTERN / PLACE</span><div className="zellige-mark">✳</div><strong>Made to feel<br />like it was kept.</strong></div></div></section>
+      <section className="art-section"><div className="art-intro"><span className="eyebrow">A WORLD MADE BY HAND</span><h2>Designed from heritage.<br /><em>Built from memories.</em></h2><p>An open book, a living archive. The visual language of L’Walida draws from Rabat’s old walls, treasured photographs, and the warmth of well-kept pages.</p><Logo className="art-logo" /></div><div className="brand-board"><div className="brand-logo-card"><span className="board-label">THE MARK — AN OPEN BOOK</span><Logo /></div><div className="palette-card"><span className="board-label">NOIR · GOLD · BEIGE</span><div className="swatches">{colorPalette.map((color, i) => (<div key={i} style={{ background: color.hex, color: isLightColor(color.hex) ? '#1A1712' : '#EDE4D3' }}><span>{color.name}</span><b>{color.hex}</b></div>))}</div></div><div className="texture-card"><span>ARCHITECTURE / PATTERN / PLACE</span><div className="zellige-mark">✳</div><strong>Made to feel<br />like it was kept.</strong></div></div></section>
 
       <section className="sound-section"><div className="sound-ornament">♫</div><span className="eyebrow">CHAPTER 04 — CLOSE YOUR EYES</span><h2>The medina<br /><em>has a voice.</em></h2><p>Footsteps on old stone. A cup set down in a café. The hush between two stories. Original sound and music are part of the world L’Walida is building.</p><div className="audio-placeholder"><div className="audio-play"><AudioLines size={22} /></div><div className="audio-info"><span>ORIGINAL SOUND & MUSIC</span><strong>Listen for the memories</strong><small>Audio coming soon</small></div><div className="waveform" aria-hidden="true">{Array.from({ length: 32 }, (_, index) => <i key={index} style={{ height: `${10 + ((index * 13) % 27)}px` }} />)}</div><span className="audio-unavailable">NOT YET AVAILABLE</span></div><span className="sound-credit">SOUND DESIGN & ORIGINAL MUSIC · PROJET_29</span></section>
 

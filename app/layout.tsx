@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     address: false,
   },
   other: {
-    'msapplication-TileColor': '#0A272E',
+    'msapplication-TileColor': '#0A0A0A',
   },
   ...(verification ? { verification } : {}),
 }
@@ -95,8 +95,8 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   colorScheme: 'dark',
   themeColor: [
-    { media: '(prefers-color-scheme: dark)', color: '#0A272E' },
-    { media: '(prefers-color-scheme: light)', color: '#0A272E' },
+    { media: '(prefers-color-scheme: dark)', color: '#0A0A0A' },
+    { media: '(prefers-color-scheme: light)', color: '#0A0A0A' },
   ],
   width: 'device-width',
   initialScale: 1,
