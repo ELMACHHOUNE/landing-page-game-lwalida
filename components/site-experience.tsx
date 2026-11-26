@@ -1,36 +1,11 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, AudioLines, BookOpen, Camera, Compass, Gamepad2, Menu, Mic2, X } from 'lucide-react'
-import { team } from '@/lib/site'
+import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, AudioLines, Gamepad2, Menu, X } from 'lucide-react'
+import { useI18n } from '@/components/locale-provider'
+import LanguageSwitcher from '@/components/language-switcher'
 
-const colorPalette = [
-  { name: "Noir", hex: "#0A0A0A" },
-  { name: "Charcoal", hex: "#1C1915" },
-  { name: "Antique Gold", hex: "#C8A24C" },
-  { name: "Champagne", hex: "#E0C078" },
-  { name: "Bronze", hex: "#8A6A2F" },
-  { name: "Beige", hex: "#EDE4D3" },
-  { name: "Sand", hex: "#CDB996" },
-  { name: "Taupe", hex: "#8A7C63" },
-];
-
-const gameFeatures = [
-  { id: "explore", title: "Explore", description: "Walk through historic streets and discover the places that hold a story." },
-  { id: "photograph", title: "Photograph", description: "Look through the lens to recognize familiar places and preserve them." },
-  { id: "listen", title: "Listen", description: "Gather voices, footsteps, and the everyday sound of the medina." },
-  { id: "remember", title: "Remember", description: "Bring each collected fragment into a journal that slowly comes alive." },
-];
-
-const memories = [
-  { title: 'The Photograph', place: 'A forgotten home', text: 'An old photograph is all he has to begin with. Its faded edges point toward a street that still remembers.', mark: '01', sketch: '⌂' },
-  { title: 'The Blue Door', place: 'Kasbah des Oudayas', text: 'Somewhere behind the blue doors, the neighborhood keeps the shape of a childhood.', mark: '02', sketch: '▤' },
-  { title: 'Voices of the Medina', place: 'The traditional souk', text: 'In the rhythm of the souk, familiar voices begin to turn a place into a story.', mark: '03', sketch: '〰' },
-  { title: 'Zohra’s Childhood', place: 'A place called home', text: 'Small moments, kept alive by the people who were there to witness them.', mark: '04', sketch: '✳' },
-  { title: 'The Journey', place: 'Rabat, Morocco', text: 'Every collected image and sound brings the past a little closer.', mark: '05', sketch: '↗' },
-]
-
-const steps = ['Research & exploration', 'Narrative & game concept', 'Visual identity', 'Character & environment design', 'UI/UX design', 'Sound & music production', 'Unity implementation', 'Testing & final presentation']
+const paletteHex = ['#0A0A0A', '#1C1915', '#C8A24C', '#E0C078', '#8A6A2F', '#EDE4D3', '#CDB996', '#8A7C63']
 
 function isLightColor(hex: string) {
   const value = hex.replace('#', '')
@@ -45,6 +20,12 @@ function Logo({ className = '' }: { className?: string }) {
 }
 
 export default function SiteExperience() {
+  const { t } = useI18n()
+  const memories = t.journal.memories
+  const steps = t.process.steps
+  const teamMembers = t.team.members
+  const locations = t.world.locations
+
   const [memory, setMemory] = useState(0)
   const [menuOpen, setMenuOpen] = useState(false)
   const [turnDirection, setTurnDirection] = useState(1)
@@ -125,91 +106,89 @@ export default function SiteExperience() {
           <div className="hero-image" />
           <div className="hero-arch-image" aria-hidden="true" />
           <div className="hero-grain" />
-          <nav className="site-nav" aria-label="Main navigation">
-            <a className="nav-brand" href="#home" aria-label="L’Walida home"><Logo /></a>
+          <nav className="site-nav" aria-label={t.nav.label}>
+            <a className="nav-brand" href="#home" aria-label={t.nav.home}><Logo /></a>
             <div className="nav-links">
-              <a href="#story">Story</a><a href="#journal">Journal</a><a href="#world">The world</a><a href="#team">Team</a>
+              <a href="#story">{t.nav.story}</a><a href="#journal">{t.nav.journal}</a><a href="#world">{t.nav.world}</a><a href="#team">{t.nav.team}</a>
             </div>
             <div className="nav-actions">
-              <button className="sound-toggle" disabled aria-label="Sound unavailable; no audio supplied" title="No audio files have been supplied"><span className="sound-slash"><AudioLines size={17} /></span></button>
-              <a className="nav-cta" href="#play">Enter the story <ArrowUpRight size={15} /></a>
-              <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen}>{menuOpen ? <X /> : <Menu />}</button>
+              <button className="sound-toggle" disabled aria-label={t.nav.soundUnavailable} title={t.nav.soundTitle}><span className="sound-slash"><AudioLines size={17} /></span></button>
+              <a className="nav-cta" href="#play">{t.nav.enter} <ArrowUpRight size={15} className="rtl-flip" /></a>
+              <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? t.nav.closeMenu : t.nav.openMenu} aria-expanded={menuOpen}>{menuOpen ? <X /> : <Menu />}</button>
+              <LanguageSwitcher />
             </div>
           </nav>
-          {menuOpen && <div className="mobile-menu"><a onClick={() => setMenuOpen(false)} href="#story">Story</a><a onClick={() => setMenuOpen(false)} href="#journal">Journal</a><a onClick={() => setMenuOpen(false)} href="#world">The world</a><a onClick={() => setMenuOpen(false)} href="#team">Team</a><a onClick={() => setMenuOpen(false)} href="#play">Play L’Walida</a></div>}
-          <div className="hero-topline"><span>PROJET_29 PRESENTS</span><span className="topline-rule" /><span>RABAT, MOROCCO · 2026</span></div>
+          {menuOpen && <div className="mobile-menu"><a onClick={() => setMenuOpen(false)} href="#story">{t.nav.story}</a><a onClick={() => setMenuOpen(false)} href="#journal">{t.nav.journal}</a><a onClick={() => setMenuOpen(false)} href="#world">{t.nav.world}</a><a onClick={() => setMenuOpen(false)} href="#team">{t.nav.team}</a><a onClick={() => setMenuOpen(false)} href="#play">{t.nav.enter}</a></div>}
+          <div className="hero-topline"><span>{t.hero.presents}</span><span className="topline-rule" /><span>{t.hero.location}</span></div>
           <div className="hero-center">
-            <span className="eyebrow hero-kicker">A NARRATIVE ADVENTURE</span>
+            <span className="eyebrow hero-kicker">{t.hero.kicker}</span>
             <Logo className="hero-logo" />
-            <h1 className="sr-only">L’Walida — Every street holds a memory</h1>
-            <p className="hero-tagline">Every street holds a memory.</p>
-            <p className="hero-copy">A journey through the places, voices, and stories<br className="desktop-break" /> that made a mother’s world.</p>
-            <a href="#story" className="hero-button">Discover the journey <ArrowDown size={16} /></a>
+            <h1 className="sr-only">{t.hero.srTitle}</h1>
+            <p className="hero-tagline">{t.hero.tagline}</p>
+            <p className="hero-copy">{t.hero.copy}<br className="desktop-break" /> {t.hero.copyBreak}</p>
+            <a href="#story" className="hero-button">{t.hero.button} <ArrowDown size={16} /></a>
           </div>
-          <div className="hero-bottom"><span className="hero-coordinate">34°01′ N&nbsp; 6°50′ W</span><a href="#story" className="scroll-cue"><span className="scroll-line" />SCROLL TO REMEMBER</a><span className="hero-edition">A GAME JAM VGC PROJECT</span></div>
-          <span className="hero-side-note">LOST IN THE MEDINA — RABAT</span>
+          <span className="hero-side-note">{t.hero.sideNote}</span>
         </div>
       </section>
 
       <section id="story" className="intro section-paper">
-        <div className="intro-index"><span>CHAPTER 01</span><span className="ornament-line" /><span>THE JOURNEY</span></div>
+        <div className="intro-index"><span>{t.story.indexLeft}</span><span className="ornament-line" /><span>{t.story.indexRight}</span></div>
         <div className="intro-grid">
-          <div className="intro-heading"><span className="eyebrow ink-eyebrow">A STORY HELD IN PLACE</span><h2>Some streets lead us home.<br /><em>Others lead us to memories.</em></h2></div>
-          <div className="intro-copy"><p>L’Walida is an emotional narrative adventure inspired by the historic streets of Rabat. Carrying an old photograph, a young man returns to his mother’s childhood neighborhood to discover the places—and the people—that remember her.</p><a href="#journal" className="text-link">Open the memory journal <ArrowRight size={16} /></a></div>
+          <div className="intro-heading"><span className="eyebrow ink-eyebrow">{t.story.eyebrow}</span><h2>{t.story.headingLine1}<br /><em>{t.story.headingLine2}</em></h2></div>
+          <div className="intro-copy"><p>{t.story.paragraph}</p><a href="#journal" className="text-link">{t.story.link} <ArrowRight size={16} className="rtl-flip" /></a></div>
         </div>
         <div className="intro-collage">
-          <div className="collage-photo"><img src="/images/rabat-dusk.png" alt="Sun-washed Moroccan medina rooftops" /><span className="photo-caption">RABAT · AN AFTERNOON REMEMBERED</span></div>
-          <div className="collage-note"><span className="note-star">✳</span><p>“The walls knew her<br />before I did.”</p><span className="note-sign">— from the journal</span></div>
-          <div className="collage-stamp"><span>MEMORY<br />NO. 01</span><strong>R</strong><span>34°01′ N</span></div>
-          <div className="collage-label">A city is made<br />of what it keeps.</div>
+          <div className="collage-photo"><img src="/images/rabat-dusk.png" alt={t.story.photoAlt} /><span className="photo-caption">{t.story.photoCaption}</span></div>
+          <div className="collage-note"><span className="note-star">✳</span><p>{t.story.noteLine1}<br />{t.story.noteLine2}</p><span className="note-sign">{t.story.noteSign}</span></div>
+          <div className="collage-stamp"><span>{t.story.stampTop}<br />{t.story.stampBottom}</span><strong>R</strong><span>{t.story.stampCoord}</span></div>
+          <div className="collage-label">{t.story.labelLine1}<br />{t.story.labelLine2}</div>
         </div>
       </section>
 
       <section id="journal" className="journal-section">
-        <div className="section-heading light-heading"><span className="eyebrow">A JOURNAL OF FRAGMENTS</span><h2>Keep what time<br /><em>cannot erase.</em></h2><p>Each memory is a small door. Turn the page and step inside.</p></div>
+        <div className="section-heading light-heading"><span className="eyebrow">{t.journal.eyebrow}</span><h2>{t.journal.headingLine1}<br /><em>{t.journal.headingLine2}</em></h2><p>{t.journal.paragraph}</p></div>
         <div className="book-wrap" onTouchStart={(event) => { touchStartX.current = event.changedTouches[0]?.clientX ?? null }} onTouchEnd={(event) => { const endX = event.changedTouches[0]?.clientX; if (touchStartX.current !== null && endX !== undefined && Math.abs(endX - touchStartX.current) > 45) moveMemory(endX < touchStartX.current ? 1 : -1); touchStartX.current = null }}>
           <div className="book-spine" aria-hidden="true" />
           <article className="book-page book-left" key={`left-${memory}`}>
-            <div className="page-top"><span>L’WALIDA · JOURNAL</span><span>RABAT, MOROCCO</span></div>
-            <div className="memory-photo"><span className={`memory-drawing drawing-${memory}`}>{activeMemory.sketch}</span><span className="photo-date">A PLACE REMEMBERED</span></div>
-            <p className="hand-note">“There was a blue door<br />at the end of this street.”</p>
+            <div className="page-top"><span>{t.journal.pageTopLeft}</span><span>{t.journal.pageTopRight}</span></div>
+            <div className="memory-photo"><span className={`memory-drawing drawing-${memory}`}>{activeMemory.sketch}</span><span className="photo-date">{t.journal.photoDate}</span></div>
+            <p className="hand-note">{t.journal.handNoteLine1}<br />{t.journal.handNoteLine2}</p>
             <span className="page-number">{activeMemory.mark}</span>
           </article>
           <article className={`book-page book-right ${turnDirection > 0 ? 'turn-forward' : 'turn-backward'}`} key={`right-${memory}`} aria-live="polite">
-            <span className="memory-kicker">FRAGMENT {activeMemory.mark} / 05</span>
+            <span className="memory-kicker">{t.journal.fragment} {activeMemory.mark} / 05</span>
             <h3>{activeMemory.title}</h3><span className="memory-place">{activeMemory.place}</span>
             <p className="memory-text">{activeMemory.text}</p>
             <div className="memory-flourish">✳</div>
-            <span className="memory-written">A memory, collected.</span>
+            <span className="memory-written">{t.journal.written}</span>
             <span className="page-number">{String(memory + 2).padStart(2, '0')}</span>
           </article>
         </div>
-        <div className="journal-controls"><button onClick={() => moveMemory(-1)} aria-label="Previous memory"><ArrowLeft size={18} /></button><div className="journal-progress"><span>MEMORY</span><strong>{String(memory + 1).padStart(2, '0')}</strong><span className="progress-slash">/</span><span>05</span><div className="progress-track"><span style={{ width: `${((memory + 1) / memories.length) * 100}%` }} /></div></div><button onClick={() => moveMemory(1)} aria-label="Next memory"><ArrowRight size={18} /></button></div>
-        <p className="journal-hint"><span className="turn-hint-arrows" aria-hidden="true"><ArrowLeft size={12} /><ArrowRight size={12} /></span> Use the arrows, swipe, or keyboard to turn each page</p>
+        <div className="journal-controls"><button onClick={() => moveMemory(-1)} aria-label={t.journal.prev}><ArrowLeft size={18} className="rtl-flip" /></button><div className="journal-progress"><span>{t.journal.progress}</span><strong>{String(memory + 1).padStart(2, '0')}</strong><span className="progress-slash">/</span><span>05</span><div className="progress-track"><span style={{ width: `${((memory + 1) / memories.length) * 100}%` }} /></div></div><button onClick={() => moveMemory(1)} aria-label={t.journal.next}><ArrowRight size={18} className="rtl-flip" /></button></div>
+        <p className="journal-hint"><span className="turn-hint-arrows" aria-hidden="true"><ArrowLeft size={12} className="rtl-flip" /><ArrowRight size={12} className="rtl-flip" /></span> {t.journal.hint}</p>
       </section>
 
       <section id="world" className="world-section">
-        <div className="world-header"><div><h2>Inspired by Rabat.</h2></div><p></p></div>
-        <div className="location-strip"><article className="location-card location-large"><img src="/images/rabat-dusk.png" alt="Blue and white architecture inspired by the Kasbah des Oudayas" /><span className="location-no">01 / KASBAH DES OUDAYAS</span><h3>Blue walls.<br />Open skies.</h3><span className="location-arrow"><ArrowUpRight /></span></article><article className="location-card location-small"><img src="/images/rabat-dusk.png" alt="A sunlit market street inspired by Rabat’s old medina" /><span className="location-no">02 / THE OLD MEDINA</span><h3>Every turn,<br />a story.</h3><span className="location-arrow"><ArrowUpRight /></span></article><article className="location-card location-small"><div className="location-art"><span>✳</span><strong>حسن</strong><i>RABAT · MOROCCO</i></div><span className="location-no">03 / HASSAN TOWER</span><h3>A landmark<br />in the distance.</h3><span className="location-arrow"><ArrowUpRight /></span></article><article className="location-card location-wide"><img src="/images/rabat-dusk.png" alt="Illustrated Rabat skyline at golden hour" /><span className="location-no">04 / THE BOUREGREG</span><h3>Where the city<br />meets the light.</h3><span className="location-arrow"><ArrowUpRight /></span></article></div>
+        <div className="world-header"><div><h2>{t.world.headingLine1}</h2></div><p></p></div>
+        <div className="location-strip"><article className="location-card location-large"><img src="/images/rabat-dusk.png" alt={locations[0].alt} /><span className="location-no">{locations[0].no}</span><h3>{locations[0].titleLine1}<br />{locations[0].titleLine2}</h3><span className="location-arrow"><ArrowUpRight className="rtl-flip" /></span></article><article className="location-card location-small"><img src="/images/rabat-dusk.png" alt={locations[1].alt} /><span className="location-no">{locations[1].no}</span><h3>{locations[1].titleLine1}<br />{locations[1].titleLine2}</h3><span className="location-arrow"><ArrowUpRight className="rtl-flip" /></span></article><article className="location-card location-small"><div className="location-art"><span>✳</span><strong>{locations[2].art}</strong><i>{locations[2].artLabel}</i></div><span className="location-no">{locations[2].no}</span><h3>{locations[2].titleLine1}<br />{locations[2].titleLine2}</h3><span className="location-arrow"><ArrowUpRight className="rtl-flip" /></span></article><article className="location-card location-wide"><img src="/images/rabat-dusk.png" alt={locations[3].alt} /><span className="location-no">{locations[3].no}</span><h3>{locations[3].titleLine1}<br />{locations[3].titleLine2}</h3><span className="location-arrow"><ArrowUpRight className="rtl-flip" /></span></article></div>
       </section>
 
-      
+      <section className="art-section"><div className="art-intro"><span className="eyebrow">{t.art.eyebrow}</span><h2>{t.art.headingLine1}<br /><em>{t.art.headingLine2}</em></h2><p>{t.art.paragraph}</p><Logo className="art-logo" /></div><div className="brand-board"><div className="brand-logo-card"><span className="board-label">{t.art.markLabel}</span><Logo /></div><div className="palette-card"><span className="board-label">{t.art.paletteLabel}</span><div className="swatches">{t.art.palette.map((name, i) => (<div key={i} style={{ background: paletteHex[i], color: isLightColor(paletteHex[i]) ? '#1A1712' : '#EDE4D3' }}><span>{name}</span><b>{paletteHex[i]}</b></div>))}</div></div><div className="texture-card"><span>{t.art.textureLabel}</span><div className="zellige-mark">✳</div><strong>{t.art.textureStrongLine1}<br />{t.art.textureStrongLine2}</strong></div></div></section>
 
-      <section className="art-section"><div className="art-intro"><span className="eyebrow">A WORLD MADE BY HAND</span><h2>Designed from heritage.<br /><em>Built from memories.</em></h2><p>An open book, a living archive. The visual language of L’Walida draws from Rabat’s old walls, treasured photographs, and the warmth of well-kept pages.</p><Logo className="art-logo" /></div><div className="brand-board"><div className="brand-logo-card"><span className="board-label">THE MARK — AN OPEN BOOK</span><Logo /></div><div className="palette-card"><span className="board-label">NOIR · GOLD · BEIGE</span><div className="swatches">{colorPalette.map((color, i) => (<div key={i} style={{ background: color.hex, color: isLightColor(color.hex) ? '#1A1712' : '#EDE4D3' }}><span>{color.name}</span><b>{color.hex}</b></div>))}</div></div><div className="texture-card"><span>ARCHITECTURE / PATTERN / PLACE</span><div className="zellige-mark">✳</div><strong>Made to feel<br />like it was kept.</strong></div></div></section>
+      <section className="sound-section"><div className="sound-ornament">♫</div><span className="eyebrow">{t.sound.eyebrow}</span><h2>{t.sound.headingLine1}<br /><em>{t.sound.headingLine2}</em></h2><p>{t.sound.paragraph}</p><div className="audio-placeholder"><div className="audio-play"><AudioLines size={22} /></div><div className="audio-info"><span>{t.sound.infoLabel}</span><strong>{t.sound.infoTitle}</strong><small>{t.sound.infoSmall}</small></div><div className="waveform" aria-hidden="true">{Array.from({ length: 32 }, (_, index) => <i key={index} style={{ height: `${10 + ((index * 13) % 27)}px` }} />)}</div><span className="audio-unavailable">{t.sound.unavailable}</span></div><span className="sound-credit">{t.sound.credit}</span></section>
 
-      <section className="sound-section"><div className="sound-ornament">♫</div><span className="eyebrow">CHAPTER 04 — CLOSE YOUR EYES</span><h2>The medina<br /><em>has a voice.</em></h2><p>Footsteps on old stone. A cup set down in a café. The hush between two stories. Original sound and music are part of the world L’Walida is building.</p><div className="audio-placeholder"><div className="audio-play"><AudioLines size={22} /></div><div className="audio-info"><span>ORIGINAL SOUND & MUSIC</span><strong>Listen for the memories</strong><small>Audio coming soon</small></div><div className="waveform" aria-hidden="true">{Array.from({ length: 32 }, (_, index) => <i key={index} style={{ height: `${10 + ((index * 13) % 27)}px` }} />)}</div><span className="audio-unavailable">NOT YET AVAILABLE</span></div><span className="sound-credit">SOUND DESIGN & ORIGINAL MUSIC · PROJET_29</span></section>
+      <section className="trailer-section"><div className="trailer-art"><img src="/images/rabat-dusk.png" alt={t.trailer.alt} /><div className="trailer-overlay" /></div><div className="trailer-content"><span className="eyebrow">{t.trailer.eyebrow}</span><h2>{t.trailer.headingLine1}<br /><em>{t.trailer.headingLine2}</em></h2><span className="trailer-coming"><span /> {t.trailer.coming}</span></div><span className="trailer-mark">{t.trailer.mark}</span></section>
 
-      <section className="trailer-section"><div className="trailer-art"><img src="/images/rabat-dusk.png" alt="Rabat rooftops at sunset, the world of L’Walida" /><div className="trailer-overlay" /></div><div className="trailer-content"><span className="eyebrow">A GLIMPSE INTO THE WORLD</span><h2>Step inside<br /><em>the memories.</em></h2><span className="trailer-coming"><span /> TRAILER COMING SOON</span></div><span className="trailer-mark">L’W · 2.5D NARRATIVE ADVENTURE</span></section>
+      <section id="team" className="team-section section-paper"><div className="team-heading"><div><span className="eyebrow ink-eyebrow">{t.team.eyebrow}</span><h2>{t.team.headingLine1}<br /><em>{t.team.headingLine2}</em></h2></div><p>{t.team.paragraph}<br /><span>{t.team.meet}</span></p></div><div className="team-grid">{teamMembers.map((member, index) => <article className="team-member" key={member.name}><div className="portrait-placeholder"><span className="portrait-initials">{member.name.split(' ').filter(Boolean).slice(0, 2).map((part) => part.charAt(0)).join('').replace(/[^A-Za-z]/g, '').slice(0, 2)}</span><span className="portrait-number">0{index + 1}</span><span className="portrait-note">{t.team.portraitNote}</span></div><div className="member-meta"><span>{member.role}</span><h3>{member.name}</h3><p>{member.work}</p></div></article>)}</div></section>
 
-      <section id="team" className="team-section section-paper"><div className="team-heading"><div><span className="eyebrow ink-eyebrow">THE PEOPLE BEHIND THE PAGES</span><h2>Eight creatives.<br /><em>One story.</em></h2></div><p>A shared passion for Moroccan culture, art, and interactive storytelling.<br /><span>MEET PROJET_29</span></p></div><div className="team-grid">{team.map(([name, role, work], index) => <article className="team-member" key={name}><div className="portrait-placeholder"><span className="portrait-initials">{name.split(' ').filter(Boolean).slice(0, 2).map((part) => part.charAt(0)).join('').replace(/[^A-Za-z]/g, '').slice(0, 2)}</span><span className="portrait-number">0{index + 1}</span><span className="portrait-note">PROJET_29</span></div><div className="member-meta"><span>{role}</span><h3>{name}</h3><p>{work}</p></div></article>)}</div></section>
+      <section className="process-section"><div className="process-heading"><span className="eyebrow">{t.process.eyebrow}</span><h2>{t.process.headingLine1}<br /><em>{t.process.headingLine2}</em></h2><p>{t.process.paragraph}</p></div><ol className="timeline">{steps.map((step, index) => <li key={step}><span className="timeline-number">0{index + 1}</span><span className="timeline-dot" /><div><h3>{step}</h3><span>{t.process.subtitle}</span></div></li>)}</ol></section>
 
-      <section className="process-section"><div className="process-heading"><span className="eyebrow">THE MAKING OF A MEMORY</span><h2>From an idea<br /><em>to a living world.</em></h2><p>A collaborative journey across story, image, sound, and play.</p></div><ol className="timeline">{steps.map((step, index) => <li key={step}><span className="timeline-number">0{index + 1}</span><span className="timeline-dot" /><div><h3>{step}</h3><span>PROJET_29 · GAME JAM VGC</span></div></li>)}</ol></section>
+      <section className="jam-section"><span className="jam-star">✳</span><span className="eyebrow">{t.jam.eyebrow}</span><h2>{t.jam.headingLine1}<br /><em>{t.jam.headingLine2}</em></h2><p>{t.jam.paragraph}</p><div className="jam-signature"><span>{t.jam.by}</span><strong>{t.jam.signature}</strong><span>{t.jam.location}</span></div></section>
 
-      <section className="jam-section"><span className="jam-star">✳</span><span className="eyebrow">MADE FOR GAME JAM VGC</span><h2>Lost in the Medina.<br /><em>Found in a memory.</em></h2><p>L’Walida brings storytelling, graphic design, game development, music, and sound together to celebrate Moroccan cultural heritage through an emotional interactive experience.</p><div className="jam-signature"><span>AN ORIGINAL PROJECT BY</span><strong>PROJET_29</strong><span>RABAT, MOROCCO · 2026</span></div></section>
+      <section id="play" className="final-cta"><div className="cta-image" /><div className="cta-content"><span className="eyebrow">{t.cta.eyebrow}</span><h2>{t.cta.headingLine1}<br /><em>{t.cta.headingLine2}</em></h2><p>{t.cta.paragraph}</p><span className="availability"><Gamepad2 size={16} /> {t.cta.availability}</span></div><span className="cta-coordinate">{t.cta.coordinate}</span></section>
 
-      <section id="play" className="final-cta"><div className="cta-image" /><div className="cta-content"><span className="eyebrow">THE JOURNEY IS BEING PREPARED</span><h2>Every street<br /><em>holds a memory.</em></h2><p>Begin your journey through the medina.</p><span className="availability"><Gamepad2 size={16} /> GAME COMING SOON</span></div><span className="cta-coordinate">34°01′ N&nbsp; 6°50′ W</span></section>
-
-      <footer className="footer"><div className="footer-top"><a href="#home" className="footer-logo"><Logo /></a><div className="footer-arabic" lang="ar" dir="rtl">الوالدة</div><div className="footer-nav"><a href="#story">Story</a><a href="#journal">Journal</a><a href="#world">The world</a><a href="#team">Team</a></div><a className="back-top" href="#home" aria-label="Back to top"><ArrowUpRight /></a></div><div className="footer-bottom"><span>MADE WITH MEMORIES. MADE IN MOROCCO.</span><span>© 2026 PROJET_29 — L’WALIDA</span><span>GAME JAM VGC</span></div></footer>
+      <footer className="footer"><div className="footer-top"><a href="#home" className="footer-logo"><Logo /></a><div className="footer-arabic" lang="ar" dir="rtl">{t.footer.arabicName}</div><div className="footer-nav"><a href="#story">{t.footer.story}</a><a href="#journal">{t.footer.journal}</a><a href="#world">{t.footer.world}</a><a href="#team">{t.footer.team}</a></div><a className="back-top" href="#home" aria-label={t.footer.backTop}><ArrowUpRight /></a></div><div className="footer-bottom"><span>{t.footer.made}</span><span>{t.footer.copyright}</span><span>{t.footer.jam}</span></div></footer>
     </main>
   )
 }

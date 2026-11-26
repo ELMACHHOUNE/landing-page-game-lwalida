@@ -1,0 +1,358 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e4]:
+      - navigation "التنقل الرئيسي" [ref=e6]:
+        - link "الصفحة الرئيسية للوالدة" [ref=e7] [cursor=pointer]:
+          - /url: "#home"
+          - img "L’Walida — الوالدة open-book logo" [ref=e8]
+        - 'button "اللغة: العربية" [ref=e11] [cursor=pointer]':
+          - generic [ref=e16]: ع
+      - generic [ref=e17]:
+        - generic [ref=e18]: بروجيه_29 يقدّم
+        - generic [ref=e20]: الرباط، المغرب · 2026
+      - generic [ref=e21]:
+        - generic [ref=e22]: مغامرة سردية
+        - img "L’Walida — الوالدة open-book logo" [ref=e23]
+        - heading "الوالدة — كل شارع يحمل ذكرى" [level=1] [ref=e24]
+        - paragraph [ref=e25]: كل شارع يحمل ذكرى.
+        - paragraph [ref=e26]: رحلة عبر الأماكن والأصوات والحكايات التي صنعت عالم أمّ.
+      - generic [ref=e27]:
+        - generic [ref=e28]: 34°01′ شمالاً 6°50′ غرباً
+        - link "انزل لتتذكّر" [ref=e29] [cursor=pointer]:
+          - /url: "#story"
+        - generic [ref=e31]: مشروع GAME JAM VGC
+      - generic [ref=e32]: تائه في المدينة — الرباط
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - generic [ref=e35]: الفصل 01
+        - generic [ref=e37]: الرحلة
+      - generic [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]: حكاية تسكن المكان
+          - heading [level=2] [ref=e41]:
+            - text: بعض الشوارع تعيدنا إلى البيت.
+            - emphasis [ref=e42]: وأخرى تقودنا إلى الذكريات.
+        - generic [ref=e43]:
+          - paragraph [ref=e44]: الوالدة مغامرة سردية مؤثّرة مستوحاة من شوارع الرباط التاريخية. يحمل شابٌّ صورة قديمة ويعود إلى حيّ طفولة أمّه ليكتشف الأماكن — والناس — الذين يتذكّرونها.
+          - link "افتح دفتر الذكريات" [ref=e45] [cursor=pointer]:
+            - /url: "#journal"
+      - generic [ref=e48]:
+        - generic [ref=e49]:
+          - img "أسطح المدينة المغربية تحت ضوء الشمس" [ref=e50]
+          - generic [ref=e51]: الرباط · ظهيرة تُذكَر
+        - generic [ref=e52]:
+          - text: ✳
+          - paragraph [ref=e53]: «كانت الجدران تعرفهاقبل أن أعرفها.»
+          - text: — من الدفتر
+        - generic [ref=e55]:
+          - generic [ref=e56]: ذكرىرقم 01
+          - strong [ref=e58]: R
+          - generic [ref=e59]: 34°01′ شمالاً
+        - generic [ref=e60]: المدينة تصنعهاالأشياء التي تحتفظ بها.
+    - generic [ref=e62]:
+      - text: ✳
+      - generic [ref=e63]:
+        - generic [ref=e64]: دفتر من الشذرات
+        - heading [level=2] [ref=e65]:
+          - text: احتفظ بما لا يستطيع
+          - emphasis [ref=e66]: الزمن محوَه.
+        - paragraph [ref=e67]: كل ذكرى باب صغير. اقلب الصفحة وادخل.
+      - generic [ref=e68]:
+        - article [ref=e70]:
+          - generic [ref=e71]:
+            - generic [ref=e72]: الوالدة · دفتر
+            - generic [ref=e73]: الرباط، المغرب
+          - generic [ref=e74]:
+            - generic [ref=e75]: ⌂
+            - generic [ref=e76]: مكان في الذاكرة
+          - paragraph [ref=e77]: «كان هناك باب أزرقفي نهاية هذا الشارع.»
+          - generic [ref=e79]: "01"
+        - article [ref=e80]:
+          - generic [ref=e81]: شذرة 01 / 05
+          - heading "الصورة" [level=3] [ref=e82]
+          - text: منزل منسي
+          - paragraph [ref=e83]: صورة قديمة هي كل ما لديه ليبدأ بها. حوافها الباهتة تدلّه على شارع لا يزال يتذكّر.
+          - generic [ref=e84]: ✳
+          - generic [ref=e85]: ذكرى، مُجمَّعة.
+          - generic [ref=e86]: "02"
+      - generic [ref=e87]:
+        - button "الذكرى السابقة" [ref=e88] [cursor=pointer]
+        - generic [ref=e91]:
+          - generic [ref=e92]: ذكرى
+          - strong [ref=e93]: "01"
+          - generic [ref=e94]: /
+          - generic [ref=e95]: "05"
+        - button "الذكرى التالية" [ref=e98] [cursor=pointer]
+      - paragraph [ref=e101]: استخدم الأسهم أو اسحب أو لوحة المفاتيح لقلب كل صفحة
+      - text: ✳
+    - generic [ref=e107]:
+      - generic [ref=e108]:
+        - heading "مستوحى من الرباط." [level=2] [ref=e110]
+        - paragraph
+      - generic [ref=e111]:
+        - article [ref=e112]:
+          - img "عمارة زرقاء وبيضاء مستوحاة من قصبة الأوداية" [ref=e113]
+          - generic [ref=e114]: 01 / قصبة الأوداية
+          - heading "جدران زرقاء. سماء مفتوحة." [level=3] [ref=e115]: جدران زرقاء.سماء مفتوحة.
+        - article [ref=e120]:
+          - img "شارع سوق مشمس مستوحى من مدينة الرباط العتيقة" [ref=e121]
+          - generic [ref=e122]: 02 / المدينة العتيقة
+          - heading "في كل منعطف، حكاية." [level=3] [ref=e123]: في كل منعطف،حكاية.
+        - article [ref=e128]:
+          - generic [ref=e129]:
+            - generic [ref=e130]: ✳
+            - strong [ref=e131]: حسن
+            - generic [ref=e132]: الرباط · المغرب
+          - generic [ref=e133]: 03 / صومعة حسان
+          - heading "معلم في الأفق." [level=3] [ref=e134]: معلمفي الأفق.
+        - article [ref=e139]:
+          - img "أفق الرباط المرسوم في الساعة الذهبية" [ref=e140]
+          - generic [ref=e141]: 04 / أبو رقراق
+          - heading "حيث تلتقي المدينة بالضوء." [level=3] [ref=e142]: حيث تلتقي المدينةبالضوء.
+    - generic [ref=e147]:
+      - generic [ref=e148]:
+        - generic [ref=e149]: عالم صنعته اليد
+        - heading [level=2] [ref=e150]:
+          - text: مصمَّم من التراث.
+          - emphasis [ref=e151]: مبنيّ من الذكريات.
+        - paragraph [ref=e152]: كتاب مفتوح، وأرشيف حيّ. تستلهم اللغة البصرية للوالدة من جدران الرباط العتيقة والصور المحفوظة ودفء الصفحات المصانة.
+        - img "L’Walida — الوالدة open-book logo" [ref=e153]
+      - generic [ref=e154]:
+        - generic [ref=e155]:
+          - generic [ref=e156]: العلامة — كتاب مفتوح
+          - img "L’Walida — الوالدة open-book logo" [ref=e157]
+        - generic [ref=e158]:
+          - generic [ref=e159]: أسود · ذهبي · بيج
+          - generic [ref=e160]:
+            - generic [ref=e161]:
+              - generic [ref=e162]: أسود
+              - generic [ref=e163]: "#0A0A0A"
+            - generic [ref=e164]:
+              - generic [ref=e165]: فحمي
+              - generic [ref=e166]: "#1C1915"
+            - generic [ref=e167]:
+              - generic [ref=e168]: ذهبي عتيق
+              - generic [ref=e169]: "#C8A24C"
+            - generic [ref=e170]:
+              - generic [ref=e171]: شامبانيا
+              - generic [ref=e172]: "#E0C078"
+            - generic [ref=e173]:
+              - generic [ref=e174]: برونزي
+              - generic [ref=e175]: "#8A6A2F"
+            - generic [ref=e176]:
+              - generic [ref=e177]: بيج
+              - generic [ref=e178]: "#EDE4D3"
+            - generic [ref=e179]:
+              - generic [ref=e180]: رملي
+              - generic [ref=e181]: "#CDB996"
+            - generic [ref=e182]:
+              - generic [ref=e183]: بني فاتح
+              - generic [ref=e184]: "#8A7C63"
+        - generic [ref=e185]:
+          - generic [ref=e186]: عمارة / نقوش / مكان
+          - generic [ref=e187]: ✳
+          - strong [ref=e188]: مصنوع ليبدوكما لو كان محفوظاً.
+    - generic [ref=e189]:
+      - generic [ref=e190]: ♫
+      - generic [ref=e191]: الفصل 04 — أغمض عينيك
+      - heading [level=2] [ref=e192]:
+        - text: للمدينة
+        - emphasis [ref=e193]: صوت.
+      - paragraph [ref=e194]: خطوات على الحجر العتيق. فنجان يُوضع في مقهى. السكون بين حكايتين. الصوت والموسيقى الأصلية جزء من العالم الذي تبنيه الوالدة.
+      - generic [ref=e195]:
+        - generic [ref=e198]:
+          - generic [ref=e199]: صوت وموسيقى أصلية
+          - strong [ref=e200]: استمع إلى الذكريات
+          - generic [ref=e201]: الصوت قريباً
+        - generic [ref=e235]: غير متاح بعد
+      - generic [ref=e236]: تصميم الصوت والموسيقى الأصلية · بروجيه_29
+    - generic [ref=e237]:
+      - img "أسطح الرباط عند الغروب، عالم الوالدة" [ref=e239]
+      - generic [ref=e241]:
+        - generic [ref=e242]: لمحة من العالم
+        - heading [level=2] [ref=e243]:
+          - text: ادخل إلى
+          - emphasis [ref=e244]: الذكريات.
+        - generic [ref=e245]: الإعلان قريباً
+      - generic [ref=e247]: L’W · مغامرة سردية 2.5D
+    - generic [ref=e248]:
+      - generic [ref=e249]:
+        - generic [ref=e250]:
+          - generic [ref=e251]: الناس خلف الصفحات
+          - heading [level=2] [ref=e252]:
+            - text: ثمانية مبدعين.
+            - emphasis [ref=e253]: حكاية واحدة.
+        - paragraph [ref=e254]:
+          - text: شغف مشترك بالثقافة المغربية والفن والسرد التفاعلي.
+          - generic [ref=e255]: تعرّف على بروجيه_29
+      - generic [ref=e256]:
+        - article [ref=e257]:
+          - generic [ref=e258]:
+            - text: ✳
+            - generic [ref=e259]: MB
+            - generic [ref=e260]: "01"
+            - generic [ref=e261]: بروجيه_29
+          - generic [ref=e262]:
+            - text: مصمم جرافيك
+            - heading "Montassir BENTAHAR" [level=3] [ref=e263]
+            - paragraph [ref=e264]: رسومات البيئات · تصميم الشخصيات
+        - article [ref=e265]:
+          - generic [ref=e266]:
+            - text: ✳
+            - generic [ref=e267]: ME
+            - generic [ref=e268]: "02"
+            - generic [ref=e269]: بروجيه_29
+          - generic [ref=e270]:
+            - text: مصمم UX/UI وجرافيك
+            - heading "Mohamed EL MACHHOUNE" [level=3] [ref=e271]
+            - paragraph [ref=e272]: الهوية البصرية · الشعار · واجهات اللعبة
+        - article [ref=e273]:
+          - generic [ref=e274]:
+            - text: ✳
+            - generic [ref=e275]: Sa
+            - generic [ref=e276]: "03"
+            - generic [ref=e277]: بروجيه_29
+          - generic [ref=e278]:
+            - text: كاتب ومنتج
+            - heading "Saad abdoulmoulah" [level=3] [ref=e279]
+            - paragraph [ref=e280]: كتابة السيناريو · تنسيق الإنتاج
+        - article [ref=e281]:
+          - generic [ref=e282]:
+            - text: ✳
+            - generic [ref=e283]: SM
+            - generic [ref=e284]: "04"
+            - generic [ref=e285]: بروجيه_29
+          - generic [ref=e286]:
+            - text: مصممة ألعاب
+            - heading "Salma MAHDAR" [level=3] [ref=e287]
+            - paragraph [ref=e288]: آليات اللعب · تصميم المراحل
+        - article [ref=e289]:
+          - generic [ref=e290]:
+            - text: ✳
+            - generic [ref=e291]: NM
+            - generic [ref=e292]: "05"
+            - generic [ref=e293]: بروجيه_29
+          - generic [ref=e294]:
+            - text: مصممة مؤثرات صوتية
+            - heading "Nouhaila MAADI" [level=3] [ref=e295]
+            - paragraph [ref=e296]: المشاهد الصوتية · الفولي
+        - article [ref=e297]:
+          - generic [ref=e298]:
+            - text: ✳
+            - generic [ref=e299]: OF
+            - generic [ref=e300]: "06"
+            - generic [ref=e301]: بروجيه_29
+          - generic [ref=e302]:
+            - text: مصممة موسيقى
+            - heading "OUFFATA Fatima Ezzahrae" [level=3] [ref=e303]
+            - paragraph [ref=e304]: الموسيقى التصويرية · الهوية الموسيقية
+        - article [ref=e305]:
+          - generic [ref=e306]:
+            - text: ✳
+            - generic [ref=e307]: EY
+            - generic [ref=e308]: "07"
+            - generic [ref=e309]: بروجيه_29
+          - generic [ref=e310]:
+            - text: سرد اللعبة
+            - heading "EL-HILALY Yahya" [level=3] [ref=e311]
+            - paragraph [ref=e312]: السرد التفاعلي · الحوار
+        - article [ref=e313]:
+          - generic [ref=e314]:
+            - text: ✳
+            - generic [ref=e315]: ER
+            - generic [ref=e316]: "08"
+            - generic [ref=e317]: بروجيه_29
+          - generic [ref=e318]:
+            - text: مطوّر ألعاب
+            - heading "EL RHALLOUCH Mohamed Amine" [level=3] [ref=e319]
+            - paragraph [ref=e320]: تطوير Unity · طريقة اللعب
+    - generic [ref=e321]:
+      - generic [ref=e322]:
+        - generic [ref=e323]: صناعة ذكرى
+        - heading [level=2] [ref=e324]:
+          - text: من فكرة
+          - emphasis [ref=e325]: إلى عالم حيّ.
+        - paragraph [ref=e326]: رحلة تعاونية بين الحكاية والصورة والصوت واللعب.
+      - list [ref=e327]:
+        - listitem [ref=e328]:
+          - generic [ref=e329]: "01"
+          - generic [ref=e331]:
+            - heading "البحث والاستكشاف" [level=3] [ref=e332]
+            - generic [ref=e333]: بروجيه_29 · GAME JAM VGC
+        - listitem [ref=e334]:
+          - generic [ref=e335]: "02"
+          - generic [ref=e337]:
+            - heading "السرد ومفهوم اللعبة" [level=3] [ref=e338]
+            - generic [ref=e339]: بروجيه_29 · GAME JAM VGC
+        - listitem [ref=e340]:
+          - generic [ref=e341]: "03"
+          - generic [ref=e343]:
+            - heading "الهوية البصرية" [level=3] [ref=e344]
+            - generic [ref=e345]: بروجيه_29 · GAME JAM VGC
+        - listitem [ref=e346]:
+          - generic [ref=e347]: "04"
+          - generic [ref=e349]:
+            - heading "تصميم الشخصيات والبيئات" [level=3] [ref=e350]
+            - generic [ref=e351]: بروجيه_29 · GAME JAM VGC
+        - listitem [ref=e352]:
+          - generic [ref=e353]: "05"
+          - generic [ref=e355]:
+            - heading "تصميم واجهات المستخدم" [level=3] [ref=e356]
+            - generic [ref=e357]: بروجيه_29 · GAME JAM VGC
+        - listitem [ref=e358]:
+          - generic [ref=e359]: "06"
+          - generic [ref=e361]:
+            - heading "إنتاج الصوت والموسيقى" [level=3] [ref=e362]
+            - generic [ref=e363]: بروجيه_29 · GAME JAM VGC
+        - listitem [ref=e364]:
+          - generic [ref=e365]: "07"
+          - generic [ref=e367]:
+            - heading "التنفيذ على Unity" [level=3] [ref=e368]
+            - generic [ref=e369]: بروجيه_29 · GAME JAM VGC
+        - listitem [ref=e370]:
+          - generic [ref=e371]: "08"
+          - generic [ref=e373]:
+            - heading "الاختبار والعرض النهائي" [level=3] [ref=e374]
+            - generic [ref=e375]: بروجيه_29 · GAME JAM VGC
+    - generic [ref=e376]:
+      - generic [ref=e377]: ✳
+      - generic [ref=e378]: صُنع من أجل GAME JAM VGC
+      - heading [level=2] [ref=e379]:
+        - text: تائه في المدينة.
+        - emphasis [ref=e380]: موجود في ذكرى.
+      - paragraph [ref=e381]: تجمع الوالدة بين السرد والتصميم الجرافيكي وتطوير الألعاب والموسيقى والصوت للاحتفاء بالتراث الثقافي المغربي عبر تجربة تفاعلية مؤثّرة.
+      - generic [ref=e382]:
+        - generic [ref=e383]: مشروع أصلي من
+        - strong [ref=e384]: بروجيه_29
+        - generic [ref=e385]: الرباط، المغرب · 2026
+    - generic [ref=e386]:
+      - generic [ref=e388]:
+        - generic [ref=e389]: الرحلة قيد الإعداد
+        - heading [level=2] [ref=e390]:
+          - text: كل شارع
+          - emphasis [ref=e391]: يحمل ذكرى.
+        - paragraph [ref=e392]: ابدأ رحلتك عبر المدينة.
+        - generic [ref=e393]: اللعبة قريباً
+      - generic [ref=e396]: 34°01′ شمالاً 6°50′ غرباً
+    - generic [ref=e397]:
+      - generic [ref=e398]:
+        - link [ref=e399] [cursor=pointer]:
+          - /url: "#home"
+          - img "L’Walida — الوالدة open-book logo" [ref=e400]
+        - generic [ref=e401]: الوالدة
+        - generic [ref=e402]:
+          - link "الحكاية" [ref=e403] [cursor=pointer]:
+            - /url: "#story"
+          - link "الدفتر" [ref=e404] [cursor=pointer]:
+            - /url: "#journal"
+          - link "العالم" [ref=e405] [cursor=pointer]:
+            - /url: "#world"
+          - link "الفريق" [ref=e406] [cursor=pointer]:
+            - /url: "#team"
+        - link "العودة إلى الأعلى" [ref=e407] [cursor=pointer]:
+          - /url: "#home"
+      - generic [ref=e411]:
+        - generic [ref=e412]: مصنوع من الذكريات. صُنع في المغرب.
+        - generic [ref=e413]: © 2026 بروجيه_29 — الوالدة
+        - generic [ref=e414]: GAME JAM VGC
+  - alert [ref=e415]

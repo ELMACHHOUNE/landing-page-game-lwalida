@@ -1,0 +1,7 @@
+npm notice run my-project@0.1.0 start
+npm notice run next start
+▲ Next.js 16.4.6
+- Local:         http://localhost:3000
+- Network:       http://10.140.226.10:3000
+✓ Ready in 230ms
+✓ Running next.config.mjs took 37ms
