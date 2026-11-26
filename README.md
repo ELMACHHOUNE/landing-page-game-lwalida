@@ -1,337 +1,167 @@
-# L'Walida — الوالدة
+# L’Walida — الوالدة
 
-### Every street holds a memory.
+> **Every street holds a memory.**
 
-**Hackathon Theme:** Lost in the Medina  
-**Genre:** 2D Narrative Adventure / Exploration / Puzzle  
-**Engine:** Unity 6  
-**Language:** C#  
-**Setting:** Rabat, Morocco  
-**Status:** In Development
+The official landing page for **L’Walida**, an emotional narrative adventure inspired by the historic medina of Rabat, Morocco. Built by **PROJET_29** for the **Game Jam VGC** under the theme *Lost in the Medina*.
+
+- **Live site:** [landing-page-game-lwalida.vercel.app](https://landing-page-game-lwalida.vercel.app)
+- **Repository:** [github.com/ELMACHHOUNE/landing-page-game-lwalida](https://github.com/ELMACHHOUNE/landing-page-game-lwalida)
+- **Game genre:** 2D narrative adventure · exploration · puzzle
+- **Setting:** Rabat, Morocco
+- **Status:** In development
 
 ---
 
-## 1. About the Game
+## About the project
 
-L'Walida is an emotional 2D narrative adventure inspired by the historical streets, architecture and cultural heritage of Rabat, Morocco.
+This repository is the **marketing and information site** for L’Walida. It presents the game’s story, world, art direction, sound design, team, and production journey, and gives visitors a place to follow the project until release.
 
-The player follows a young man who returns to his mother's childhood neighborhood with an old photograph of her former home.
+The game follows a young man who returns to his mother’s childhood neighbourhood with an old photograph, exploring the streets, voices, and memories that shaped her world. The landing page reflects that tone through an editorial, book-inspired visual language: warm paper textures, deep teal, gold accents, and Moroccan architectural motifs.
 
-Through exploration, conversations, photography and sound recordings, the player reconstructs fragments of her past while discovering the deeper meaning behind his journey.
+## Tech stack
 
-L'Walida explores memory, family, identity, nostalgia, grief and the emotional connection between people and places.
+- **Next.js 16** (App Router, React Server Components)
+- **React 19**
+- **TypeScript 5.7**
+- **Tailwind CSS v4** via `@tailwindcss/postcss`
+- **shadcn/ui** primitives (Base UI) and **lucide-react** icons
+- **Vercel Analytics** for privacy-friendly traffic insights
+- Custom CSS in `app/globals.css` for the art direction and scroll animations
 
-## 2. Hackathon Theme
+## Features
 
-The theme "Lost in the Medina" is interpreted through two complementary dimensions:
+- Cinematic hero with a scroll-driven “opening book” reveal and parallax.
+- Story, memory journal, world/locations, art direction, sound, team, process, and jam sections.
+- Interactive memory journal with arrow, swipe, and keyboard navigation.
+- Fully responsive layout with `prefers-reduced-motion` support.
+- SEO metadata, Open Graph/Twitter cards, sitemap, robots, PWA manifest, and JSON-LD structured data.
+- Brand favicon set generated from the L’Walida open-book mark.
 
-- Physical exploration of the narrow streets of Rabat's medina.
-- An emotional journey through memories, loss and personal identity.
-
-The medina is not simply a game environment. It is a living archive of stories, voices and memories.
-
-## 3. Game Objectives
-
-- Explore a stylized Moroccan medina.
-- Find the protagonist's mother's childhood house.
-- Interact with residents who remember her.
-- Capture photographs of meaningful locations.
-- Record the sounds of the medina.
-- Collect fragments of memory in a personal journal.
-- Discover the conclusion of the protagonist's emotional journey.
-
-## 4. Gameplay Features
-
-### Planned Core Features
-
-- 2D side-scrolling movement.
-- Interactive NPCs.
-- Branching dialogue.
-- Environmental storytelling.
-- Photography-based puzzles.
-- Ambient sound collection.
-- Memory journal.
-- Cinematic cutscenes.
-- Original Moroccan-inspired visual identity.
-- Immersive sound design.
-
-## 5. Game Locations
-
-The game is inspired by real locations in Rabat:
-
-- Café Maure.
-- Kasbah des Oudayas.
-- Traditional blue-and-white alleyways.
-- Rabat's old medina and souk.
-- Rue des Consuls.
-- Hassan Tower.
-
-The environments are fictionalized and compressed for gameplay purposes.
-
-## 6. Art Direction
-
-L'Walida uses a hand-painted 2D illustration style inspired by Moroccan architecture, watercolor textures, traditional craftsmanship and nostalgic photographs.
-
-### Color Palette
-
-| Color | HEX |
-|---|---|
-| Oudaya Blue | #276B8C |
-| Midnight Blue | #183744 |
-| Chalk White | #F2EDE3 |
-| Hassan Sand | #C8A477 |
-| Memory Sepia | #A87C52 |
-| Olive Green | #66765A |
-| Terracotta | #AB6048 |
-| Charcoal | #252827 |
-
-### Visual Elements
-
-- Moroccan zellige patterns.
-- Traditional wooden doors.
-- Horseshoe arches.
-- Aged photographs.
-- Handwritten journal elements.
-- Blue-and-white plaster walls.
-- Warm cinematic lighting.
-- Layered parallax backgrounds.
-
-## 7. Characters
-
-### The Protagonist
-
-A young man searching for fragments of his mother's childhood.
-
-### Zohra
-
-The protagonist's mother, whose memories guide the narrative.
-
-### Lalla Amina
-
-An elderly resident who remembers Zohra's childhood home.
-
-### Allal
-
-A traditional shopkeeper who shares memories of the neighborhood.
-
-### The Neighbor
-
-A character who plays an important role in the final scene.
-
-## 8. Controls
-
-| Key | Action |
-|---|---|
-| A / D | Move |
-| Left / Right Arrow | Move |
-| E | Interact |
-| C | Camera |
-| Space | Capture / Continue |
-| R | Record sound |
-| J | Memory journal |
-| Escape | Pause / Back |
-
-## 9. Technologies
-
-- Unity 6
-- C#
-- Universal Render Pipeline — 2D
-- Unity Input System
-- Cinemachine
-- TextMeshPro
-- Unity Timeline
-- ScriptableObjects
-- Unity Audio Mixer
-- Git and GitHub
-
-### Design and Development Tools
-
-- Figma
-- Adobe Illustrator or equivalent
-- Visual Studio
-- Visual Studio Code
-- OpenCode
-- Audacity
-
-## 10. Project Architecture
-
-The project uses modular gameplay systems:
-
-- GameManager
-- PlayerController
-- InteractionManager
-- DialogueManager
-- MemoryManager
-- CameraSystem
-- SoundRecorder
-- ObjectiveManager
-- AudioManager
-- SceneLoader
-- SaveManager
-- UI Controllers
-
-## 11. Project Structure
-
-    Assets/
-      _Game/
-        Art/
-        Audio/
-        Animations/
-        Materials/
-        Fonts/
-        Prefabs/
-        Scenes/
-        Scripts/
-        ScriptableObjects/
-
-    Packages/
-    ProjectSettings/
-    README.md
-
-## 12. Installation
+## Getting started
 
 ### Prerequisites
 
-- Unity Hub.
-- The Unity Editor version specified in ProjectSettings/ProjectVersion.txt.
-- Windows Build Support for Windows exports.
-- Git.
-- Git LFS if required by the repository.
+- Node.js 20+ (recommended)
+- npm, pnpm, or yarn
 
-### Clone the Repository
+### Install and run
 
-    git clone YOUR_REPOSITORY_URL
-    cd LWalida
+```bash
+npm install
+npm run dev
+```
 
-### Open the Project
+Open [http://localhost:3000](http://localhost:3000).
 
-1. Launch Unity Hub.
-2. Select Add Project from Disk.
-3. Select the cloned LWalida directory.
-4. Open the project with the required Unity version.
-5. Allow Unity to import assets and resolve packages.
-6. Open the MainMenu or Boot scene.
-7. Press Play.
+### Production build
 
-## 13. Development Roadmap
+```bash
+npm run build
+npm run start
+```
 
-### Phase 1 — Pre-production
+> `package.json` declares `pnpm` as the package manager, so `pnpm install && pnpm dev` also works. An `npm` lockfile is committed as well.
 
-- [ ] Define the narrative.
-- [ ] Create the game design document.
-- [ ] Establish branding and art direction.
-- [ ] Design the UI/UX.
-- [ ] Initialize the Unity project.
+## Environment variables
 
-### Phase 2 — Core Development
+| Variable | Required | Description |
+|---|---|---|
+| `NEXT_PUBLIC_SITE_URL` | Recommended | Canonical site origin used by `metadataBase`, Open Graph URLs, `robots.txt`, and `sitemap.xml`. Defaults to `https://landing-page-game-lwalida.vercel.app`. |
+| `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | Optional | Google Search Console verification token. |
 
-- [ ] Player movement.
-- [ ] Camera tracking.
-- [ ] Interaction system.
-- [ ] NPC dialogue.
-- [ ] Memory management.
-- [ ] Photography system.
-- [ ] Sound-recording system.
+Example `.env.local`:
 
-### Phase 3 — Content Production
+```bash
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your-google-verification-token
+```
 
-- [ ] Character illustrations.
-- [ ] Environment illustrations.
-- [ ] Character animations.
-- [ ] NPC dialogue recording.
-- [ ] Ambient sound production.
-- [ ] UI asset integration.
+## Project structure
 
-### Phase 4 — Integration
+```
+app/
+  layout.tsx        Root layout, SEO metadata, viewport, analytics
+  page.tsx          Landing page entry + JSON-LD structured data
+  globals.css       Design system, layout, and responsive styles
+  manifest.ts       Web app manifest (/manifest.webmanifest)
+  robots.ts         robots.txt (/robots.txt)
+  sitemap.ts        sitemap.xml (/sitemap.xml)
+components/
+  site-experience.tsx  All page sections and client-side interactions
+  ui/button.tsx        shadcn/ui button primitive
+lib/
+  site.ts           Site config, keywords, and team data
+  utils.ts          Class name helpers
+public/
+  logo.png          L’Walida open-book logo
+  og-image.jpg      1200×630 social sharing image
+  icon.svg          Vector favicon / app icon
+  icon-192.png      PWA icon
+  icon-512.png      PWA icon
+  apple-icon.png    180×180 Apple touch icon
+  favicon.ico       Classic favicon
+  favicon-16x16.png
+  favicon-32x32.png
+  images/           Rabat artwork and environment illustrations
+```
 
-- [ ] Main menu.
-- [ ] Opening cutscene.
-- [ ] Café Maure scene.
-- [ ] Oudaya exploration.
-- [ ] Souk interactions.
-- [ ] Ending cutscene.
-- [ ] Credits.
+## SEO and metadata
 
-### Phase 5 — Testing and Delivery
+SEO is centralised in `app/layout.tsx` and `lib/site.ts`:
 
-- [ ] Functional testing.
-- [ ] Accessibility testing.
-- [ ] Audio balancing.
-- [ ] Performance optimization.
-- [ ] Windows build.
-- [ ] Gameplay demonstration.
-- [ ] Hackathon presentation.
+- Title template, description, keywords, author, and category.
+- Canonical URL via `metadataBase` and `alternates.canonical`.
+- Open Graph and Twitter `summary_large_image` cards using `/og-image.jpg`.
+- `robots.txt` (`app/robots.ts`) and `sitemap.xml` (`app/sitemap.ts`).
+- Web app manifest (`app/manifest.ts`) with 192/512 icons.
+- JSON-LD `VideoGame`, `WebSite`, and `Organization` schemas in `app/page.tsx`.
 
-## 14. Sound Design
+When deploying, set `NEXT_PUBLIC_SITE_URL` to the production origin so canonical and social URLs resolve correctly.
 
-The audio experience is inspired by the everyday sounds of Rabat's medina:
+## Brand assets
 
-- Moroccan café ambience.
-- Traditional markets.
-- Footsteps through narrow streets.
-- Wooden doors.
-- Birds and wind.
-- Original Moroccan-inspired instrumental music.
-- Moroccan Darija dialogue.
+The favicon set is generated from the L’Walida open-book mark in the brand palette:
 
-The sound collection mechanic connects the player's exploration to the narrative.
+| Token | Hex |
+|---|---|
+| Midnight Teal | `#0A272E` |
+| Gold | `#E3A43E` |
+| Leather / Terracotta | `#BD6B31` |
+| Paper | `#FCE9D3` |
 
-## 15. Cultural Representation
+To regenerate icons, edit `public/icon.svg` and export PNGs at 16, 32, 180, 192, and 512 px, plus `favicon.ico`.
 
-L'Walida aims to celebrate Moroccan cultural heritage through authentic architectural references, everyday environments, local voices and human stories.
+## Deployment
 
-The narrative and characters are fictional.
+The site is built for [Vercel](https://vercel.com):
 
-## 16. Accessibility
+1. Import the repository into Vercel.
+2. Add `NEXT_PUBLIC_SITE_URL` (and optionally the Google verification token) in **Project → Settings → Environment Variables**.
+3. Deploy. The default build command `next build` is detected automatically.
 
-Planned accessibility features include:
-
-- Subtitles.
-- Readable interface typography.
-- Adjustable audio settings.
-- Clear interaction prompts.
-- Simple keyboard controls.
-- Spoiler-free content notice about grief and bereavement.
-
-## 17. Team
+## The team
 
 | Member | Role |
 |---|---|
-| Team Member 1 | Game Design / UI/UX |
-| Team Member 2 | Unity Development |
-| Team Member 3 | Art / Animation |
-| Team Member 4 | Narrative / Sound Design |
+| Montassir BENTAHAR | Graphic Designer — environment illustrations, character artwork |
+| Mohamed EL MACHHOUNE | UX/UI & Graphic Designer — visual identity, logo, game interfaces |
+| Saad abdoulmoulah | Writer & Producer — screenwriting, production coordination |
+| Salma MAHDAR | Game Designer — game mechanics, level design |
+| Nouhaila MAADI | Sound Effects Designer — environmental soundscapes, Foley |
+| OUFFATA Fatima Ezzahrae | Music Designer — original soundtrack, musical identity |
+| EL-HILALY Yahya | Game Narrative — interactive storytelling, dialogue |
+| EL RHALLOUCH Mohamed Amine | Game Developer — Unity development, gameplay |
 
-## 18. Screenshots
+## Credits
 
-Add screenshots of:
+- Concept, art direction, and content by **PROJET_29**.
+- Inspired by the people, architecture, and living heritage of **Rabat, Morocco**.
+- Created for the **Game Jam VGC** — theme: *Lost in the Medina*.
+- Illustrations and the L’Walida logo are original project assets.
 
-- Main menu.
-- Medina exploration.
-- NPC conversations.
-- Photography mode.
-- Memory journal.
-
-## 19. Demo
-
-- Gameplay video: Coming soon.
-- Downloadable build: Coming soon.
-- Figma design: Add project link.
-
-## 20. Credits and Asset Licenses
-
-Document all third-party assets, fonts, music, sound effects, AI-generated artwork and their applicable licenses or attribution requirements.
-
-The project's original content and third-party content may have different usage terms.
-
-## 21. Acknowledgments
-
-Inspired by the people, architecture, traditions and living heritage of Rabat, Morocco.
-
-Built with passion for the "Lost in the Medina" hackathon.
+The game’s narrative and characters are fictional.
 
 ---
 
-**L'Walida — Every street holds a memory.**
-
-Made in Morocco.
+**L’Walida — Every street holds a memory.**  
+Made in Morocco. © 2026 PROJET_29.

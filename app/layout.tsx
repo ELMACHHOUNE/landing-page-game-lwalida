@@ -1,48 +1,106 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import { siteConfig } from '@/lib/site'
 import './globals.css'
 
+const verification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+  ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+  : undefined
+
 export const metadata: Metadata = {
-  title: 'L’Walida — Every Street Holds a Memory',
-  description: 'Discover L’Walida, a Moroccan narrative adventure by PROJET_29, inspired by Rabat’s historical medina and created for Game Jam VGC.',
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: `${siteConfig.name} — Every Street Holds a Memory`,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
   generator: 'Next.js',
+  keywords: [...siteConfig.keywords],
+  authors: [{ name: siteConfig.author, url: siteConfig.links.github }],
+  creator: siteConfig.author,
+  publisher: siteConfig.author,
+  category: 'games',
+  classification: 'Narrative adventure',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: 'L’Walida — Every Street Holds a Memory',
-    description: 'A Moroccan narrative adventure by PROJET_29, inspired by Rabat’s historic medina.',
     type: 'website',
-    images: ['https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-png-K86J8SJQiMiSbG90QyUHjWBHKLbLle.png'],
+    url: '/',
+    siteName: siteConfig.name,
+    title: `${siteConfig.name} — Every Street Holds a Memory`,
+    description: siteConfig.description,
+    locale: siteConfig.locale,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: siteConfig.ogImageWidth,
+        height: siteConfig.ogImageHeight,
+        alt: siteConfig.ogImageAlt,
+        type: 'image/jpeg',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'L’Walida — Every Street Holds a Memory',
-    description: 'A Moroccan narrative adventure by PROJET_29.',
-    images: ['https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-png-K86J8SJQiMiSbG90QyUHjWBHKLbLle.png'],
-  },
-  robots: { index: true, follow: true },
-  icons: {
-    icon: [
+    title: `${siteConfig.name} — Every Street Holds a Memory`,
+    description: siteConfig.shortDescription,
+    images: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: siteConfig.ogImage,
+        alt: siteConfig.ogImageAlt,
       },
     ],
-    apple: '/apple-icon.png',
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
+  },
+  manifest: '/manifest.webmanifest',
+  appleWebApp: {
+    capable: true,
+    title: siteConfig.name,
+    statusBarStyle: 'black-translucent',
+  },
+  formatDetection: {
+    telephone: false,
+    email: false,
+    address: false,
+  },
+  other: {
+    'msapplication-TileColor': '#0A272E',
+  },
+  ...(verification ? { verification } : {}),
 }
 
 export const viewport: Viewport = {
   colorScheme: 'dark',
-  themeColor: '#0A272E',
+  themeColor: [
+    { media: '(prefers-color-scheme: dark)', color: '#0A272E' },
+    { media: '(prefers-color-scheme: light)', color: '#0A272E' },
+  ],
   width: 'device-width',
   initialScale: 1,
+  maximumScale: 5,
 }
 
 export default function RootLayout({
@@ -51,7 +109,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang={siteConfig.language}>
       <body className="antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

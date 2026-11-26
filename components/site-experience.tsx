@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, AudioLines, BookOpen, Camera, Compass, Gamepad2, Menu, Mic2, X } from 'lucide-react'
+import { team } from '@/lib/site'
 
 const colorPalette = [
   { name: "Oudaya Blue", hex: "#276B8C" },
@@ -29,28 +30,10 @@ const memories = [
   { title: 'The Journey', place: 'Rabat, Morocco', text: 'Every collected image and sound brings the past a little closer.', mark: '05', sketch: '↗' },
 ]
 
-const team = [
-  ['Montassir BENTAHAR', 'Graphic Designer', 'Environment illustrations · Character artwork'],
-  ['Mohamed EL MACHHOUNE', 'UX/UI & Graphic Designer', 'Visual identity · Logo · Game interfaces'],
-  ['Saad abdoulmoulah', 'Writer & Producer', 'Screenwriting · Production coordination'],
-  ['Salma MAHDAR', 'Game Designer', 'Game mechanics · Level design'],
-  ['Nouhaila MAADI', 'Sound Effects Designer', 'Environmental soundscapes · Foley'],
-  ['OUFFATA Fatima Ezzahrae', 'Music Designer', 'Original soundtrack · Musical identity'],
-  ['EL-HILALY Yahya', 'Game Narrative', 'Interactive storytelling · Dialogue'],
-  ['EL RHALLOUCH Mohamed Amine', 'Game Developer', 'Unity development · Gameplay'],
-]
-
-const chapters = [
-  { title: 'The Photograph', place: 'Café Maure', text: 'A single image becomes a compass. He follows it through the streets where his mother once grew up.', image: '/images/rabat-dusk.png', number: '01' },
-  { title: 'The Blue Door', place: 'Kasbah des Oudayas', text: 'Whitewashed walls, painted doors, and the quiet puzzle of finding a place that feels familiar.', image: '/images/rabat-dusk.png', number: '02' },
-  { title: 'Voices of the Medina', place: 'The traditional souk', text: 'Listen closely. The medina is full of small sounds—and people who remember.', image: '/images/rabat-dusk.png', number: '03' },
-  { title: 'The Way Home', place: 'Rabat at dusk', text: 'As evening settles over the city, scattered memories begin to find their way home.', image: '/images/rabat-dusk.png', number: '04' },
-]
-
 const steps = ['Research & exploration', 'Narrative & game concept', 'Visual identity', 'Character & environment design', 'UI/UX design', 'Sound & music production', 'Unity implementation', 'Testing & final presentation']
 
 function Logo({ className = '' }: { className?: string }) {
-  return <img className={className} src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-png-K86J8SJQiMiSbG90QyUHjWBHKLbLle.png" alt="L’Walida — الوالدة open-book logo" />
+  return <img className={className} src="/logo.png" width={1040} height={640} alt="L’Walida — الوالدة open-book logo" decoding="async" />
 }
 
 export default function SiteExperience() {
@@ -195,11 +178,6 @@ export default function SiteExperience() {
         </div>
         <div className="journal-controls"><button onClick={() => moveMemory(-1)} aria-label="Previous memory"><ArrowLeft size={18} /></button><div className="journal-progress"><span>MEMORY</span><strong>{String(memory + 1).padStart(2, '0')}</strong><span className="progress-slash">/</span><span>05</span><div className="progress-track"><span style={{ width: `${((memory + 1) / memories.length) * 100}%` }} /></div></div><button onClick={() => moveMemory(1)} aria-label="Next memory"><ArrowRight size={18} /></button></div>
         <p className="journal-hint"><span className="turn-hint-arrows" aria-hidden="true"><ArrowLeft size={12} /><ArrowRight size={12} /></span> Use the arrows, swipe, or keyboard to turn each page</p>
-      </section>
-
-      <section className="story-scroll section-paper">
-        <div className="story-title"><div><h2>L’Walida — Four fragments</h2></div></div>
-        <div className="chapter-list">{chapters.map((chapter) => <article className="chapter-row" key={chapter.number}><div className="chapter-meta"><span>{chapter.number}</span><span className="chapter-rule" /><span>{chapter.place}</span></div><div className="chapter-image"><img src={chapter.image} alt={`${chapter.place}, a place in the L’Walida story`} /><span className="image-index">L’W · {chapter.number}</span></div><div className="chapter-copy"><h3>{chapter.title}</h3><p>{chapter.text}</p><span className="chapter-coord">RABAT, MOROCCO</span></div></article>)}</div>
       </section>
 
       <section id="world" className="world-section">
